@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/widgets/demo1.dart';
+import 'package:flutter_application_1/widgets/demo_img.dart';
 
 void main(List<String> args) {
   runApp(MyApp1());
@@ -25,7 +26,7 @@ class HomePage extends StatelessWidget {
         elevation: 10.0,
         centerTitle: true,
       ),
-      body: ButtonDemo(),
+      body: ImageIconDemo(),
     );
   }
 }

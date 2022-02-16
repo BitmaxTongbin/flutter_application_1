@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 class TextDemo extends StatelessWidget {
@@ -32,7 +34,9 @@ class ButtonDemo extends StatelessWidget {
         ElevatedButton(onPressed: () {}, child: Text("漂浮按钮")),
         TextButton(onPressed: () {}, child: Text("扁平按钮")),
         TextButton.icon(
-            onPressed: () {}, icon: Icon(Icons.add), label: Text("漂浮按钮")),
+            onPressed: () {},
+            icon: const Icon(Icons.add),
+            label: const Text("漂浮按钮")),
         OutlinedButton(onPressed: () {}, child: Text("OutlineButton")),
       ],
     );
