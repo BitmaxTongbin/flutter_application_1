@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/widgets/demo1.dart';
 import 'package:flutter_application_1/widgets/demo_img.dart';
+import 'package:flutter_application_1/widgets/navigator_dmo.dart';
 
 void main(List<String> args) {
   runApp(MyApp1());
 }
 
 class MyApp1 extends StatelessWidget {
-  //无状态 widgt
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: LoginPage(),
     );
   }
 }
@@ -26,7 +26,7 @@ class HomePage extends StatelessWidget {
         elevation: 10.0,
         centerTitle: true,
       ),
-      body: ImageIconDemo(),
+      body: InputDemo(),
     );
   }
 }
