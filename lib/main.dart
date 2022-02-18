@@ -8,11 +8,17 @@ void main(List<String> args) {
 }
 
 class MyApp1 extends StatelessWidget {
+  get navigatorKey => null;
+
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      routes: {
+        "/": (context) => LoginPage(),
+        "menu": ((context) => MenuPage()),
+      },
     );
   }
 }
