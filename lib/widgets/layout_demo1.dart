@@ -7,8 +7,23 @@ class CellView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(16.0),
-      color: Colors.yellow[200],
+      padding: const EdgeInsets.all(16.0),
+      decoration: BoxDecoration(
+        color: MyColor.cellViewBgColor,
+        borderRadius: BorderRadius.all(Radius.circular(8.0)),
+        border: new Border.all(
+          width: 1,
+          color: Colors.white,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: MyColor.viewBorderColor,
+            offset: Offset(-1.0, 1.0), //阴影x轴偏移量
+            blurRadius: 10, //阴影模糊程度
+            spreadRadius: 0, //阴影扩散程度
+          ),
+        ],
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,

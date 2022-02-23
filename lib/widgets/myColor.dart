@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 
 class MyColor {
   static const Color viewBgColor = Color(0xFFF7F8FA);
+  static const Color cellViewBgColor = Color(0xFFFFFFFF);
+  static const Color viewBorderColor = Color.fromARGB(251, 204, 199, 199);
+
   static const Color mainTextColor = Color(0xFF17304B);
   static const Color subTextColor = Color(0xFF929DAC);
   static const Color mainColor = Color(0xFFEA1C1C);
