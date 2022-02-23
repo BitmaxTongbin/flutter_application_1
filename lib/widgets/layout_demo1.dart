@@ -78,14 +78,11 @@ class _ListViewDemoState extends State<ListViewDemo> {
 
     _list = <Product>[
       Product("注册赠金", "注册并开通合约账户", "Group1.png"),
-      Product("注册赠金2", "注册并开通合约账户", "Group1.png"),
-      Product("注册赠金3", "注册并开通合约账户", "Group1.png"),
-      Product("注册赠金4", "注册并开通合约账户", "Group1.png"),
-      Product("注册赠金5", "注册并开通合约账户", "Group1.png"),
-      Product("注册赠金6", "注册并开通合约账户", "Group1.png"),
-      Product("注册赠金7", "注册并开通合约账户", "Group1.png"),
-      Product("注册赠金8", "注册并开通合约账户", "Group1.png"),
-      Product("注册赠金9", "注册并开通合约账户", "Group1.png"),
+      Product("首充赠金", "合约账户首充(任意币种)折合≥1000 USDT", "Group1.png"),
+      Product("首充赠金", "合约账户首充(任意币种)折合≥3000 USDT", "Group1.png"),
+      Product("新合约赠金", "开通合约账户30天内合约交易量≥50,000 USDT", "Group1.png"),
+      Product("交易赠金", "开通合约账户30天内合约交易量≥500,000 USDT", "Group1.png"),
+      Product("交易赠金", "开通合约账户30天内合约交易量≥1,000,000 USDT", "Group1.png"),
     ];
   }
 
