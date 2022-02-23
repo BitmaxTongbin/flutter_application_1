@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/widgets/Product.dart';
 import 'package:flutter_application_1/widgets/myColor.dart';
 
 class CellView extends StatelessWidget {
-  const CellView({Key? key}) : super(key: key);
+  final Product products;
+  const CellView({Key? key, required this.products}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,7 @@ class CellView extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Image.asset(
-            "images/Group1.png",
+            "images/" + products.iconname,
             width: 50,
             height: 50,
           ),
@@ -38,13 +40,13 @@ class CellView extends StatelessWidget {
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
+            children: [
               Text(
-                "注册赠金",
+                products.name,
                 style: TextStyle(color: MyColor.mainTextColor, fontSize: 14),
               ),
               Text(
-                "注册并开通合约账户",
+                products.desc,
                 style: TextStyle(color: MyColor.subTextColor, fontSize: 12),
               ),
             ],
@@ -63,9 +65,9 @@ class ListViewDemo extends StatefulWidget {
 }
 
 class _ListViewDemoState extends State<ListViewDemo> {
-  List<int> list = List<int>.filled(500, 0, growable: true);
   bool show = false;
   late ScrollController _controller;
+  late List _list;
 
   @override
   void initState() {
@@ -73,6 +75,18 @@ class _ListViewDemoState extends State<ListViewDemo> {
     super.initState();
     _controller = ScrollController();
     _controller.addListener(() {});
+
+    _list = <Product>[
+      Product("注册赠金", "注册并开通合约账户", "Group1.png"),
+      Product("注册赠金2", "注册并开通合约账户", "Group1.png"),
+      Product("注册赠金3", "注册并开通合约账户", "Group1.png"),
+      Product("注册赠金4", "注册并开通合约账户", "Group1.png"),
+      Product("注册赠金5", "注册并开通合约账户", "Group1.png"),
+      Product("注册赠金6", "注册并开通合约账户", "Group1.png"),
+      Product("注册赠金7", "注册并开通合约账户", "Group1.png"),
+      Product("注册赠金8", "注册并开通合约账户", "Group1.png"),
+      Product("注册赠金9", "注册并开通合约账户", "Group1.png"),
+    ];
   }
 
   @override
@@ -91,11 +105,15 @@ class _ListViewDemoState extends State<ListViewDemo> {
       ),
       body: Scrollbar(
         child: ListView.builder(
+          itemCount: _list.length,
           itemBuilder: (BuildContext context, int index) {
+            Product tmp = _list.elementAt(index);
+
             return Container(
-                padding: EdgeInsets.fromLTRB(16, 8, 16, 8),
-                color: MyColor.viewBgColor,
-                child: CellView());
+              padding: EdgeInsets.fromLTRB(16, 8, 16, 8),
+              color: MyColor.viewBgColor,
+              child: CellView(products: tmp),
+            );
 
             // return Text(list[index].toString());
           },
