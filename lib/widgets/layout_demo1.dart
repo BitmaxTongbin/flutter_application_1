@@ -110,11 +110,34 @@ class _ListViewDemoState extends State<ListViewDemo> {
             ),
           ),
           SliverToBoxAdapter(
-            child: SizedBox(
-              height: 300,
-              child: PageView(
-                children: [Text("1"), Text("2")],
-              ),
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 18,
+                ),
+                Image(
+                  image: AssetImage("images/banner.png"),
+                  width: 1100.0,
+                  height: 133.0,
+                  fit: BoxFit.contain,
+                ),
+                SizedBox(
+                  height: 18,
+                  child: Container(),
+                ),
+                Row(
+                  children: [
+                    SizedBox(width: 16),
+                    Text(
+                      "* 合约赠金可用作保证金开仓及抵扣50%交易手续费",
+                      style: TextStyle(
+                        color: MyColor.subTextColor,
+                        fontSize: 12,
+                      ),
+                    ),
+                  ],
+                )
+              ],
             ),
           ),
           SliverFixedExtentList(
