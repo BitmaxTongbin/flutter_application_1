@@ -106,7 +106,7 @@ class _ListViewDemoState extends State<ListViewDemo> {
             pinned: true,
             expandedHeight: 64,
             flexibleSpace: FlexibleSpaceBar(
-              title: Text("Demo"),
+              title: Text("合约赠金"),
             ),
           ),
           SliverToBoxAdapter(
