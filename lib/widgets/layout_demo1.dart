@@ -112,14 +112,34 @@ class _ListViewDemoState extends State<ListViewDemo> {
           SliverToBoxAdapter(
             child: Column(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 18,
                 ),
-                Image(
-                  image: AssetImage("images/banner.png"),
-                  width: 1100.0,
-                  height: 133.0,
-                  fit: BoxFit.contain,
+                Stack(
+                  children: const [
+                    Image(
+                      image: AssetImage("images/banner.png"),
+                      width: 1100.0,
+                      height: 133.0,
+                      fit: BoxFit.contain,
+                    ),
+                    Positioned(
+                      left: 36.0,
+                      top: 38,
+                      child: Text(
+                        "完成合约任务",
+                        style: TextStyle(color: Colors.white, fontSize: 18),
+                      ),
+                    ),
+                    Positioned(
+                      left: 36.0,
+                      top: 64,
+                      child: Text(
+                        "领 220 USDT 赠金",
+                        style: TextStyle(color: Colors.white, fontSize: 18),
+                      ),
+                    ),
+                  ],
                 ),
                 SizedBox(
                   height: 18,
