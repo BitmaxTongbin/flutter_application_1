@@ -83,6 +83,9 @@ class _ListViewDemoState extends State<ListViewDemo> {
       Product("新合约赠金", "开通合约账户30天内合约交易量≥50,000 USDT", "Group1.png"),
       Product("交易赠金", "开通合约账户30天内合约交易量≥500,000 USDT", "Group1.png"),
       Product("交易赠金", "开通合约账户30天内合约交易量≥1,000,000 USDT", "Group1.png"),
+      Product("交易赠金", "开通合约账户30天内合约交易量≥1,000,000 USDT", "Group1.png"),
+      Product("交易赠金", "开通合约账户30天内合约交易量≥1,000,000 USDT", "Group1.png"),
+      Product("交易赠金", "开通合约账户30天内合约交易量≥1,000,000 USDT", "Group1.png"),
     ];
   }
 
@@ -97,24 +100,38 @@ class _ListViewDemoState extends State<ListViewDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("合约赠金"),
-      ),
-      body: Scrollbar(
-        child: ListView.builder(
-          itemCount: _list.length,
-          itemBuilder: (BuildContext context, int index) {
-            Product tmp = _list.elementAt(index);
-
-            return Container(
-              padding: EdgeInsets.fromLTRB(16, 8, 16, 8),
-              color: MyColor.viewBgColor,
-              child: CellView(products: tmp),
-            );
-
-            // return Text(list[index].toString());
-          },
-        ),
+      body: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            pinned: true,
+            expandedHeight: 64,
+            flexibleSpace: FlexibleSpaceBar(
+              title: Text("Demo"),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: 300,
+              child: PageView(
+                children: [Text("1"), Text("2")],
+              ),
+            ),
+          ),
+          SliverFixedExtentList(
+            itemExtent: 100.0,
+            delegate: SliverChildBuilderDelegate(
+              (BuildContext context, int index) {
+                Product tmp = _list.elementAt(index);
+                return Container(
+                  padding: EdgeInsets.fromLTRB(16, 8, 16, 8),
+                  color: MyColor.viewBgColor,
+                  child: CellView(products: tmp),
+                );
+              },
+              childCount: _list.length,
+            ),
+          ),
+        ],
       ),
     );
   }
