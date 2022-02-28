@@ -174,6 +174,56 @@ class _ListViewDemoState extends State<ListViewDemo> {
               childCount: _list.length,
             ),
           ),
+          SliverToBoxAdapter(
+            child: Container(
+              decoration: BoxDecoration(
+                color: MyColor.cellViewBgColor,
+                borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                border: new Border.all(
+                  width: 1,
+                  color: Colors.white,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: MyColor.viewBorderColor,
+                    offset: Offset(-1.0, 1.0), //阴影x轴偏移量
+                    blurRadius: 10, //阴影模糊程度
+                    spreadRadius: 0, //阴影扩散程度
+                  ),
+                ],
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start, //
+                children: [
+                  Text(
+                    "赠金领取入口",
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: MyColor.mainTextColor,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 26,
+                  ),
+                  Text(
+                    "第一步：电脑浏览器访问AscendEX官网：",
+                    style:
+                        TextStyle(fontSize: 12, color: MyColor.mainTextColor),
+                  ),
+                  SizedBox(
+                    height: 60,
+                  ),
+                  Text(
+                    "第二步：点击菜单 【福利中心】 → 【合约赠金】",
+                    style:
+                        TextStyle(fontSize: 12, color: MyColor.mainTextColor),
+                  ),
+                ],
+              ),
+              margin: EdgeInsets.all(15),
+              padding: EdgeInsets.all(15),
+            ),
+          ),
         ],
       ),
     );
